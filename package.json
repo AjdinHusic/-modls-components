@@ -10,6 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "@modls/core": "^0.6.1",
+    "clsx": "^1.1.1",
+    "jss": "^10.4.0",
+    "jss-preset-default": "^10.4.0",
     "node-static": "^0.7.11"
   }
 }

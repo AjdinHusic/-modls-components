@@ -8,10 +8,10 @@ export default class AppBar extends Component {
         .appbar {
             display: block;
             box-sizing: border-box;
-            height: 64px;
+            min-height: 64px;
             background-color: #94cb42;
             border: 0;
-            padding: 24px;
+            padding: 8px;
             box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
         }`;
     }
@@ -20,7 +20,8 @@ export default class AppBar extends Component {
         return html`
             <header class="topnavbar-wrapper appbar">
                 <nav>
-                    <menu-icon color="#fff"></menu-icon>
+                    <menu-icon color="#fff" component="button"
+                    ></menu-icon>
                     ${this.contents}
                     <notifications-icon color="#fff" style="float: right"></notifications-icon>
                 </nav>

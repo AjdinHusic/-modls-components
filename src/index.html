@@ -11,12 +11,28 @@
         }
     </style>
     <body>
-        <app-bar></app-bar>
-        <mui-button>material ui</mui-button>
-        <bootstrap-button>bootstrap</bootstrap-button>
-        <script type="module" src="./components/AppBar.js"></script>
-        <script type="module" src="./components/MuiButton.js"></script>
-        <script type="module" src="./components/BootstrapButton.js"></script>
+        <modls-app></modls-app>
+
+        <script type="module" src="./App.js"></script>
+        <script type="text/javascript">
+        let url;
+            function clickhandler() {
+                console.log('clicked');
+            }
+            
+            fetch("https://api.github.com/users/modls")
+                .then(r => r.json())
+                .then(r => {
+                    url = r.avatar_url;
+                    const link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+                    link.type = 'image/x-icon';
+                    link.rel = 'shortcut icon';
+                    link.href = url;
+                    document.getElementsByTagName('head')[0].appendChild(link);
+                })
+                .catch(e => console.log(e));
+        
+        </script>
     </body>
 </html>
 
